@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Celsius to Fahrenheit</h2>
+  
+  <input type="number" id="celsius" placeholder="Enter Celsius">
+  <br>
+  
+  <button onclick="convertTemp()">Convert</button>
+  
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function convertTemp() {
+    let celsius = document.getElementById("celsius").value;
+
+    if (celsius === "") {
+      document.getElementById("result").innerText = "Please enter a value!";
+      return;
+    }
+
+    let fahrenheit = (celsius * 9/5) + 32;
+
+    document.getElementById("result").innerText =
+      celsius + "Celsius = " + fahrenheit.toFixed(2) + "Fahrenheit";
+  }
+</script>
+
+</body>
+</html>
